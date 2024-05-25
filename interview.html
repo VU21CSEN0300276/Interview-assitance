@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Assistance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        .navbar .category {
+            padding: 15px 20px;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+        }
+        .navbar .category:hover {
+            background-color: #555;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .questions {
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .questions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .questions li {
+            background: #eee;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 3px;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #ddd;
+            border-radius: 3px;
+        }
+        .question-item {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Interview Assistance</h1>
+    </header>
+
+    <div class="navbar">
+        <div class="category" data-target="technical">Technical</div>
+        <div class="category" data-target="aptitude">Aptitude</div>
+        <div class="category" data-target="hr">HR</div>
+    </div>
+
+    <div class="container">
+        <!-- Technical Category -->
+        <div id="technical" class="questions">
+            <h2>Technical Interview Questions</h2>
+            <ul>
+                <li class="question-item">Explain the concept of OOP.
+                    <div class="answer">OOP stands for Object-Oriented Programming. It is a programming paradigm based on the concept of "objects", which are data structures that contain data in the form of fields, and code, in the form of procedures.</div>
+                </li>
+                <li class="question-item">What is a linked list? How does it differ from an array?
+                    <div class="answer">A linked list is a linear data structure where elements are not stored at contiguous memory locations. The elements are linked using pointers. In contrast, an array stores elements at contiguous memory locations.</div>
+                </li>
+                <li class="question-item">Describe the MVC architecture.
+                    <div class="answer">MVC stands for Model-View-Controller. It is a software architectural pattern for implementing user interfaces. The model represents the data, the view displays the data, and the controller handles the input to update the model.</div>
+                </li>
+                <li class="question-item">What is polymorphism in Java?
+                    <div class="answer">Polymorphism in Java is the ability of an object to take many forms. It allows one interface to be used for a general class of actions. The specific action is determined by the exact nature of the situation.</div>
+                </li>
+                <li class="question-item">How do you manage memory in C++?
+                    <div class="answer">Memory in C++ is managed through dynamic allocation using operators like new and delete. It allows for the allocation and deallocation of memory at runtime.</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Aptitude Category -->
+        <div id="aptitude" class="questions">
+            <h2>Aptitude Test Questions</h2>
+            <ul>
+                <li class="question-item">Solve: 15 + 25 * (30 / 5)
+                    <div class="answer">The answer is 165. According to the order of operations: 30 / 5 = 6, then 25 * 6 = 150, and finally 15 + 150 = 165.</div>
+                </li>
+                <li class="question-item">If a train travels 60 miles in 1 hour, how long will it take to travel 300 miles?
+                    <div class="answer">It will take 5 hours. 300 miles / 60 miles per hour = 5 hours.</div>
+                </li>
+                <li class="question-item">What is the probability of drawing an ace from a standard deck of cards?
+                    <div class="answer">The probability is 1/13. There are 4 aces in a deck of 52 cards, so the probability is 4/52, which simplifies to 1/13.</div>
+                </li>
+                <li class="question-item">Find the missing number in the series: 2, 6, 12, 20, ?
+                    <div class="answer">The missing number is 30. The pattern is n^2 + n, where n starts at 1. For the fifth term, n = 5, so 5^2 + 5 = 25 + 5 = 30.</div>
+                </li>
+                <li class="question-item">What is the least common multiple of 4, 6, and 8?
+                    <div class="answer">The least common multiple is 24. It is the smallest number that is a multiple of all three numbers.</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- HR Category -->
+        <div id="hr" class="questions">
+            <h2>HR Interview Questions</h2>
+            <ul>
+                <li class="question-item">Tell me about yourself.
+                    <div class="answer">A strong answer should provide a brief overview of your professional background, key achievements, and how your experience relates to the role you're applying for.</div>
+                </li>
+                <li class="question-item">Why do you want to work for our company?
+                    <div class="answer">Research the company and mention specific reasons such as its culture, values, or products that align with your career goals and values.</div>
+                </li>
+                <li class="question-item">What are your strengths and weaknesses?
+                    <div class="answer">Discuss your strengths relevant to the job and provide examples. For weaknesses, mention a real one and how you're working to improve it.</div>
+                </li>
+                <li class="question-item">Describe a challenging situation you've faced and how you handled it.
+                    <div class="answer">Choose a specific example, explain the situation, the action you took, and the positive outcome or what you learned from the experience.</div>
+                </li>
+                <li class="question-item">Where do you see yourself in five years?
+                    <div class="answer">Provide a realistic career path that shows ambition and aligns with the company's direction, demonstrating your long-term interest in the role.</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.navbar .category').forEach(category => {
+            category.addEventListener('click', () => {
+                // Hide all question sets
+                document.querySelectorAll('.questions').forEach(questions => {
+                    questions.style.display = 'none';
+                });
+
+                // Show the clicked question set
+                const target = category.getAttribute('data-target');
+                document.getElementById(target).style.display = 'block';
+            });
+        });
+
+        document.querySelectorAll('.question-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.querySelector('.answer');
+                answer.style.display = answer.style.display === 'none' || answer.style.display === '' ? 'block' : 'none';
+            });
+        });
+    </script>
+
+</body>
+</html>
